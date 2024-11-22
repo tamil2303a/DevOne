@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Check if a container named 'foodyy' already exists, and remove it if it does
-                    def containerExists = sh(script: "docker ps -q -f name=foodyy", returnStdout: true).trim()
+                    def containerExists = sh(script: "docker ps -q -f name=charger", returnStdout: true).trim()
                     if (containerExists) {
                         sh 'docker stop charger'
                         sh 'docker rm charger'
